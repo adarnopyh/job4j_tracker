@@ -20,7 +20,7 @@ public class Error {
         System.out.println(activate);
         System.out.println(status);
         System.out.println(message);
-        System.out.println("");
+        System.out.println();
     }
 
     public static void main(String[] args) {
