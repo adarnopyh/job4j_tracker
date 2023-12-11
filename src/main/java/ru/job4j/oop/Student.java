@@ -14,6 +14,5 @@ public class Student {
         Student petya = new Student();
         String song = "I believe, I can fly";
         petya.music(song);
-
     }
 }
