@@ -47,6 +47,5 @@ public class Computer {
 
         Computer forth = new Computer(true, 512.0, "AMD Ryzen 7 3700X");
         forth.printInfo();
-
     }
 }
