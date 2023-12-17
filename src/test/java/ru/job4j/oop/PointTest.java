@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.offset;
 
 public class PointTest {
     @Test
-    public void when000and527Then8831() {
+    public void when000and527Then8вdot831() {
         int x1 = 0;
         int y1 = 0;
         int z1 = 0;
@@ -22,7 +22,7 @@ public class PointTest {
     }
 
     @Test
-    public void when111and444Then5196() {
+    public void when111and444Then5dot196() {
         int x1 = 1;
         int y1 = 1;
         int z1 = 1;
