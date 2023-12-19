@@ -11,7 +11,7 @@ public class Shop {
                 break;
             }
         }
-        return result
+        return result;
     }
 
     public static void main(String[] args) {
