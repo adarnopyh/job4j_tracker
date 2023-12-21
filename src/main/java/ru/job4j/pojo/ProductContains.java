@@ -7,5 +7,4 @@ public class ProductContains {
         boolean isEqual = first.equals(second);
         System.out.println(isEqual);
     }
-
 }
