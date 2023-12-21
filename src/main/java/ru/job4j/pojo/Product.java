@@ -9,6 +9,7 @@ public class Product {
     public Product(String name, int count) {
         this.name = name;
         this.count = count;
+
     }
 
     @Override
@@ -20,8 +21,8 @@ public class Product {
             return false;
         }
         Product product = (Product) o;
-        return count == product.count &&
-                Objects.equals(name, product.name);
+        return count == product.count
+                && Objects.equals(name, product.name);
     }
 
     @Override
