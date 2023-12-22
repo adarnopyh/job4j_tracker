@@ -24,7 +24,6 @@ public class Tracker {
             return true;
         }
         return false;
-
     }
 
     private int indexOf(int id) {
