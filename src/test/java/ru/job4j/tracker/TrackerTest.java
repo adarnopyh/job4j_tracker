@@ -64,7 +64,6 @@ public class TrackerTest {
         assertThat(tracker.findById(id).getName()).isEqualTo("Bug with description");
     }
 
-
     @Test
     public void whenReplaceItemIsNotSuccessful() {
         Tracker tracker = new Tracker();
@@ -75,4 +74,5 @@ public class TrackerTest {
         assertThat(tracker.findById(item.getId()).getName()).isEqualTo("Bug");
         assertThat(result).isFalse();
     }
+
 }
