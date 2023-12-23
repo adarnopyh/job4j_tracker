@@ -16,16 +16,6 @@ public class Tracker {
         return item;
     }
 
-    public boolean replace(int id, Item item) {
-        int i = indexOf(id);
-        if (i != -1) {
-            Item cell = items[i];
-            cell.setName(item.getName());
-            return true;
-        }
-        return false;
-    }
-
     private int indexOf(int id) {
         int result = -1;
         for (int i = 0; i < size; i++) {
@@ -68,5 +58,26 @@ public class Tracker {
             }
         }
         return Arrays.copyOf(result, size);
+    }
+
+    public boolean replace(int id, Item item) {
+        int i = indexOf(id);
+        if (i != -1) {
+            Item cell = items[i];
+            cell.setName(item.getName());
+            return true;
+        }
+        return false;
+    }
+
+    public void delete(int id) {
+        int index = indexOf(id);
+        int start = index + 1;
+        int length = size - index -1;
+        if (index != -1) {
+            System.arraycopy(items, start, items, index, length);
+            items[size - 1] = null;
+            size--;
+        }
     }
 }
