@@ -56,10 +56,11 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "number=" + number +
-                ", car='" + car + '\'' +
-                ", status=" + status +
-                '}';
+        return "Order{"
+                + "number=" + number
+                + ", car='" + car + '\''
+                + ", status=" + status
+                + '}';
     }
+
 }
