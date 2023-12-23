@@ -46,5 +46,4 @@ public enum Status {
     }
 
     public abstract String getMessage();
-
 }
