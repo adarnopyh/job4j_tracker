@@ -12,6 +12,7 @@ public class TrackerTest {
         Item item = tracker.add(bug);
         Item result = tracker.findById(item.getId());
         assertThat(result.getName()).isEqualTo(item.getName());
+
     }
 
     @Test
