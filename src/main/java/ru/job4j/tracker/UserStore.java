@@ -10,5 +10,4 @@ public class UserStore {
                 + user.getPassword()
         );
     }
-
 }

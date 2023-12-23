@@ -13,5 +13,4 @@ public class StartUI {
         System.out.println(itemFormated);
         System.out.println(oneObject);
     }
-
 }
