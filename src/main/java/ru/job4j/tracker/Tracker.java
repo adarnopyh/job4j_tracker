@@ -51,18 +51,19 @@ public class Tracker {
 
     public boolean replace(int id, Item item) {
         int i = indexOf(id);
-        if (i != -1) {
+        boolean result = i != -1;
+        if (result) {
             Item cell = items[i];
             cell.setName(item.getName());
-            return true;
         }
-        return false;
+        return result;
     }
 
     public void delete(int id) {
-        int index = indexOf(id);
-        if (index != -1) {
-            System.arraycopy(items, index + 1, items, index, size - index - 1);
+        int i = indexOf(id);
+        boolean result = i != -1;
+        if (result) {
+            System.arraycopy(items, i + 1, items, i, size - i - 1);
             items[size - 1] = null;
             size--;
         }
