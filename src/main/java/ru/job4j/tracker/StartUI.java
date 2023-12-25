@@ -36,8 +36,15 @@ public class StartUI {
                 if (tracker.replace(id, item)) {
                     System.out.println("Item replaced successfully.");
                 } else {
-                    System.out.println("Error. Item not replaced");
+                    System.out.println("Error. Item is not replaced");
                 }
+            } else if (select == 3) {
+                System.out.println("=== Delete item ===");
+                System.out.print("Enter id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                Item item = tracker.findById(id);
+                tracker.delete(id);
+                System.out.println(item != null ? "Item deleted successfully." : "Error. Item is not deleted");
             } else if (select == 6) {
                 run = false;
             }
