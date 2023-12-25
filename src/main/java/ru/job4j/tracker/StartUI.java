@@ -45,6 +45,16 @@ public class StartUI {
                 Item item = tracker.findById(id);
                 tracker.delete(id);
                 System.out.println(item != null ? "Item deleted successfully." : "Error. Item is not deleted");
+            } else if (select == 4) {
+                System.out.println("=== Search item by ID ===");
+                System.out.print("Enter id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                Item item = tracker.findById(id);
+                if (item != null) {
+                    System.out.println(item);
+                } else {
+                    System.out.println("Item with ID: " + id + " not found.");
+                }
             } else if (select == 6) {
                 run = false;
             }
