@@ -1,6 +1,6 @@
 package ru.job4j.polymorphism;
 
-public class Bus implements Transport{
+public class Bus implements Transport {
     @Override
     public void drive() {
 

@@ -1,6 +1,6 @@
 package ru.job4j.polymorphism;
 
-public class TownCar implements Vehicle{
+public class TownCar implements Vehicle {
     @Override
     public void changeGear() {
         System.out.println("Коробка передач автомат. Поставить селектор в режим D.");

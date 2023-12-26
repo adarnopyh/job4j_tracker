@@ -1,6 +1,6 @@
 package ru.job4j.polymorphism;
 
-public class SportCar implements Vehicle{
+public class SportCar implements Vehicle {
 
     @Override
     public void changeGear() {
