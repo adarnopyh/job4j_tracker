@@ -5,5 +5,4 @@ public class Bus implements Vehicle {
     public void move() {
         System.out.println("Busses are one the wheels");
     }
-
 }
