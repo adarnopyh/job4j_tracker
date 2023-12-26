@@ -5,4 +5,5 @@ public class Train implements Vehicle {
     public void move() {
         System.out.println("Train runs on rails");
     }
+
 }

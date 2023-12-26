@@ -10,5 +10,6 @@ public class Main {
         for (Vehicle object : vehicles) {
             object.move();
         }
+
     }
 }
