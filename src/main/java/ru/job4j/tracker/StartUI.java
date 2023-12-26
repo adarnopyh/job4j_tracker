@@ -29,7 +29,7 @@ public class StartUI {
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
         tracker.add(item);
-        System.out.println("Added request: " + item);
+        System.out.println("Added item: " + item);
     }
 
     public static void findItemByName(Input input, Tracker tracker) {
@@ -90,13 +90,13 @@ public class StartUI {
 
     private void showMenu() {
         String[] menu = {
-                "Create new request", "List all requests", "Replace request",
-                "Delete request", "Search request by ID", "Search requests by name",
-                "Exit"
+                "create new item", "list all items", "replace item",
+                "delete item", "search item by ID", "search items by name",
+                "exit"
         };
         System.out.println("Menu:");
         for (int i = 0; i < menu.length; i++) {
-            System.out.println(i + ". " + menu[i]);
+            System.out.println("Enter " + i + " to " + menu[i]);
         }
     }
 
