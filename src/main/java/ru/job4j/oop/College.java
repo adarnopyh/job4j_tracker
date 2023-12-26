@@ -9,7 +9,6 @@ public class College {
         Object object = freshman;
         Object objectFreshman = new Freshman();
 
-
         System.out.println(freshman);
         System.out.println(student);
         System.out.println(object);
@@ -19,6 +18,5 @@ public class College {
         System.out.println(new Freshman());
         System.out.println(new Student());
         System.out.println(new Object());
-
     }
 }
