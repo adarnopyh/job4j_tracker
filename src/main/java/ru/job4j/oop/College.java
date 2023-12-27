@@ -19,5 +19,4 @@ public class College {
         System.out.println(new Student());
         System.out.println(new Object());
     }
-
 }
