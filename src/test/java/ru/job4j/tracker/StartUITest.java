@@ -49,4 +49,5 @@ class StartUITest {
         new StartUI().init(input, tracker, actions);
         assertThat(tracker.findById(item.getId())).isNull();
     }
+
 }
