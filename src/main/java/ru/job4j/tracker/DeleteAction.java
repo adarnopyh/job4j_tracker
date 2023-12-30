@@ -6,6 +6,7 @@ public class DeleteAction implements UserAction {
     public DeleteAction(Output output) {
         this.output = output;
     }
+
     @Override
     public String name() {
         return "delete item";

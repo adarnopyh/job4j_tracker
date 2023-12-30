@@ -52,22 +52,22 @@ class StartUITest {
         new StartUI(output).init(input, tracker, actions);
         assertThat(tracker.findById(item.getId())).isNull();
     }
-@Test
-void whenExit() {
-    Output output = new StubOutput();
-    Input input = new MockInput(
-            new String[] {"0"}
-    );
-    Tracker tracker = new Tracker();
-    UserAction[] actions = {
-            new ExitAction(output)
-    };
-    new StartUI(output).init(input, tracker, actions);
-    assertThat(output.toString()).isEqualTo(
-            "Menu:" + System.lineSeparator()
-                    + "Enter 0 to exit" + System.lineSeparator()
-                    + "=== Completing the program ===" + System.lineSeparator()
-    );
-}
 
+    @Test
+    void whenExit() {
+        Output output = new StubOutput();
+        Input input = new MockInput(
+                new String[]{"0"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new ExitAction(output)
+        };
+        new StartUI(output).init(input, tracker, actions);
+        assertThat(output.toString()).isEqualTo(
+                "Menu:" + System.lineSeparator()
+                        + "Enter 0 to exit" + System.lineSeparator()
+                        + "=== Completing the program ===" + System.lineSeparator()
+        );
+    }
 }
