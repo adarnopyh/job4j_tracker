@@ -188,4 +188,26 @@ class StartUITest {
                         + "=== Completing the program ===" + ln
         );
     }
+
+    @Test
+    void whenInvalidExit() {
+        Output output = new MockOutput();
+        Input input = new StubInput(
+                new String[] {"9", "0"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = new UserAction[]{
+                new Exit(output)
+        };
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "Menu:" + ln
+                        + "Enter 0 to exit" + ln
+                        + "Incorrect input, you can choose from 0 to 0" + ln
+                        + "Menu:" + ln
+                        + "Enter 0 to exit" + ln
+                        + "=== Completing the program ===" + ln
+        );
+    }
 }
