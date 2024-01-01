@@ -28,14 +28,13 @@ public class FindEl {
         if (!result) {
             throw new ElementAbuseException("No permission");
         }
-        /* if contains throw ElementAbuseException */
         return true;
     }
 
     public static void main(String[] args) {
         String[] values = {"i", "This is iThis isThis is i t", "f", "r"};
         String key = "i";
-        String[] abuses = {"k","l","m", "i"};
+        String[] abuses = {"k", "l", "m", "i"};
         try {
             if (indexOf(values, key) != -1) {
                 sent(key, abuses);
@@ -48,13 +47,4 @@ public class FindEl {
         }
 
     }
-
-//    public static void main(String[] args) {
-//        try {
-//            String[] yo = {"i", "This is iThis isThis is i t", "f", "r"};
-//            indexOf(yo, "k");
-//        } catch (ElementNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//    }
 }
