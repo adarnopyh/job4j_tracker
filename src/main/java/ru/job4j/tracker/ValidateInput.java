@@ -28,16 +28,4 @@ public class ValidateInput implements Input {
         } while (invalid);
         return value;
     }
-
-    private boolean isNumber(String value) {
-        boolean result = true;
-        char[] check = value.toCharArray();
-        for (char number : check) {
-            if (number < 48 || number > 57) {
-                result = false;
-                break;
-            }
-        }
-        return result;
-    }
 }
