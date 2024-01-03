@@ -5,17 +5,17 @@ import java.util.Objects;
 public class UserStore {
 
     public static User findUser(User[] users, String login) throws UserNotFoundException {
-        User user = null;
-        for (User user1 : users) {
-            if (login.equals(user1.getUsername())) {
-                user = user1;
+        User result = null;
+        for (User user : users) {
+            if (login.equals(user.getUsername())) {
+                result = user;
                 break;
             }
         }
-        if (user == null) {
+        if (result == null) {
             throw new UserNotFoundException("This user is not found");
         }
-        return user;
+        return result;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
