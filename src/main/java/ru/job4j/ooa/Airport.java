@@ -11,5 +11,7 @@ public class Airport {
         System.out.println(airbus);
         airbus.printModel();
         airbus.printCountEngine();
+        System.out.println(airbus.toString()
+        );
     }
 }
