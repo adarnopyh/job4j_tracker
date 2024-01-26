@@ -13,15 +13,15 @@ public class PhoneDictionaryTest {
     public void whenFindByName() {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(new Person("Petr", "Arsentev", "534872", "Bryansk"));
-        ArrayList<Person> kontakt = phones.find("Petr");
-        assertThat(kontakt.get(0).getSurname()).isEqualTo("Arsentev");
+        ArrayList<Person> contact = phones.find("Petr");
+        assertThat(contact.get(0).getSurname()).isEqualTo("Arsentev");
     }
 
     @Test
     public void whenFindByNameIsNull() {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(new Person("Petr", "Arsentev", "534872", "Bryansk"));
-        ArrayList<Person> kontakt = phones.find("Oetr");
-        assertTrue(kontakt.isEmpty());
+        ArrayList<Person> contact = phones.find("Oetr");
+        assertThat(contact.isEmpty());
     }
 }
