@@ -23,7 +23,7 @@ public class FindByName implements UserAction {
         ArrayList<Item>[] items = new ArrayList[]{tracker.findByName(name)};
         if (items.length > 0) {
             for (ArrayList<Item> item : items) {
-                for(Item each : item) {
+                for (Item each : item) {
                     output.println(each);
                 }
             }
@@ -32,4 +32,5 @@ public class FindByName implements UserAction {
         }
         return true;
     }
+
 }
