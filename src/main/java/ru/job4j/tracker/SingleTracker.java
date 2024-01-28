@@ -25,11 +25,11 @@ public class SingleTracker {
         return tracker.findById(id);
     }
 
-    public ArrayList[] findAll() {
+    public ArrayList<Item>[] findAll() {
         return tracker.findAll();
     }
 
-    public Item[] findByName(String key) {
+    public ArrayList<Item> findByName(String key) {
         return tracker.findByName(key);
     }
 
@@ -40,4 +40,5 @@ public class SingleTracker {
     public void delete(int id) {
         tracker.delete(id);
     }
+
 }

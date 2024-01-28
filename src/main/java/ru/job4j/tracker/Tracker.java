@@ -35,17 +35,14 @@ public class Tracker {
         return new ArrayList[]{copyOf};
     }
 
-    public Item[] findByName(String key) {
-        Item[] result = new Item[items.size()];
-        int count = 0;
-        for (int i = 0; i < items.size(); i++) {
-            Item name = items.get(i);
+    public ArrayList<Item> findByName(String key) {
+        ArrayList<Item> result = new ArrayList<>();
+        for (Item name : items) {
             if (name.getName().equals(key)) {
-                result[count] = name;
-                count++;
+              result.add(name);
             }
         }
-        return Arrays.copyOf(result, count);
+        return result;
     }
 
     public boolean replace(int id, Item item) {
@@ -65,4 +62,5 @@ public class Tracker {
             items.remove(i);
         }
     }
+
 }

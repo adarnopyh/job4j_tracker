@@ -19,7 +19,6 @@ class StartUITest {
         actions.add(new Create(output));
         actions.add(new Exit(output));
         new StartUI(output).init(input, tracker, actions);
-//        Item result = tracker.findAll()[0].get(0);
         assertThat(tracker.findAll()[0].get(0).equals("Item name"));
     }
 
@@ -205,4 +204,5 @@ class StartUITest {
                         + "=== Completing the program ===" + ln
         );
     }
+
 }
