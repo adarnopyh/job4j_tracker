@@ -1,25 +1,23 @@
 package ru.job4j.tracker;
 
-import ru.job4j.pojo.Book;
-
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
 
 public class Tracker {
-    private final Item[] items = new Item[100];
-    private int ids = 1;
-    private int size = 0;
+    private final ArrayList<Item> items = new ArrayList<>();
+
+    private int ids = items.size() + 1;
 
     public Item add(Item item) {
         item.setId(ids++);
-        items[size++] = item;
+        items.add(item);
         return item;
     }
 
     private int indexOf(int id) {
         int result = -1;
-        for (int i = 0; i < size; i++) {
-            if (items[i].getId() == id) {
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getId() == id) {
                 result = i;
                 break;
             }
@@ -29,18 +27,19 @@ public class Tracker {
 
     public Item findById(int id) {
         int index = indexOf(id);
-        return index != -1 ? items[index] : null;
+        return index != -1 ? items.get(index) : null;
     }
 
-    public Item[] findAll() {
-        return Arrays.copyOf(items, size);
+    public ArrayList<Item>[] findAll() {
+        ArrayList<Item> copyOf = new ArrayList<>(items);
+        return new ArrayList[]{copyOf};
     }
 
     public Item[] findByName(String key) {
-        Item[] result = new Item[items.length];
+        Item[] result = new Item[items.size()];
         int count = 0;
-        for (int i = 0; i < size; i++) {
-            Item name = items[i];
+        for (int i = 0; i < items.size(); i++) {
+            Item name = items.get(i);
             if (name.getName().equals(key)) {
                 result[count] = name;
                 count++;
@@ -54,7 +53,7 @@ public class Tracker {
         boolean result = i != -1;
         if (result) {
             item.setId(id);
-            items[i] = item;
+            items.set(i, item);
         }
         return result;
     }
@@ -63,9 +62,7 @@ public class Tracker {
         int i = indexOf(id);
         boolean result = i != -1;
         if (result) {
-            System.arraycopy(items, i + 1, items, i, size - i - 1);
-            items[size - 1] = null;
-            size--;
+            items.remove(i);
         }
     }
 }
