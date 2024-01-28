@@ -31,5 +31,4 @@ public class FindAll implements UserAction {
         }
         return true;
     }
-
 }
