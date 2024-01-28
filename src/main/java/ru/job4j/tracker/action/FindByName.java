@@ -32,5 +32,4 @@ public class FindByName implements UserAction {
         }
         return true;
     }
-
 }

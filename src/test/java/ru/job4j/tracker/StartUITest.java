@@ -204,5 +204,4 @@ class StartUITest {
                         + "=== Completing the program ===" + ln
         );
     }
-
 }
