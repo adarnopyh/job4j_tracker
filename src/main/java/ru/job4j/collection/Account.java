@@ -38,5 +38,4 @@ public class Account {
                 + ", deposit='" + deposit + '\''
                 + '}';
     }
-
 }

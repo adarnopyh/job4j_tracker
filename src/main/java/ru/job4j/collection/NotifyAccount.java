@@ -11,5 +11,4 @@ public class NotifyAccount {
         }
         return result;
     }
-
 }
