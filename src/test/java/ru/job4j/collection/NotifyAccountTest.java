@@ -46,4 +46,5 @@ class NotifyAccountTest {
         expected.add(new Account("142", "Petr Arsentev", "eDer3432f"));
         assertThat(NotifyAccount.sent(accounts)).containsAll(expected);
     }
+
 }
