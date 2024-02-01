@@ -12,5 +12,4 @@ public class Task {
     public String getNumber() {
         return number;
     }
-
 }
