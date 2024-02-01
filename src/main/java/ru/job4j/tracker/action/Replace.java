@@ -21,7 +21,7 @@ public class Replace implements UserAction {
     public boolean execute(Input input, Tracker tracker) {
         output.println("=== Replace item ===");
         int id = input.askInt("Enter id: ");
-        String name = input.askStr("Enter id: ");
+        String name = input.askStr("Please enter new item name: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
             output.println("Item replaced successfully.");
