@@ -5,11 +5,12 @@ import java.util.List;
 
 public class FullSearch {
 
-    public HashSet<String> extractNumber(List<Task> tasks){
+    public HashSet<String> extractNumber(List<Task> tasks) {
         HashSet<String> searchedItems = new HashSet<>();
         for (Task task : tasks) {
             searchedItems.add(task.getNumber());
         }
         return searchedItems;
     }
+
 }
