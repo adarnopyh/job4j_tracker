@@ -26,10 +26,10 @@ public class ReconstructPhrase {
     private String getDescendingElements() {
         StringBuilder totalString2 = new StringBuilder();
         int size = descendingElements.size();
-        for (int i = 0; i < size; i++) {
-            totalString2.append(descendingElements.poll());
+        for (int i = size - 1; i >= 0; i--) {
+            totalString2.append(descendingElements.pollLast());
         }
-        return totalString2.reverse().toString();
+        return totalString2.toString();
     }
 
     public String getReconstructPhrase() {
