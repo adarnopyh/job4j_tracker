@@ -15,5 +15,4 @@ public class UsageHashSet {
             System.out.println(auto);
         }
     }
-
 }
