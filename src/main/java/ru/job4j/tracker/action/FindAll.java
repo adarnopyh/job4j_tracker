@@ -20,12 +20,10 @@ public class FindAll implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         output.println("=== List all items ===");
-        List<Item>[] items = tracker.findAll();
-        if (items.length > 0) {
-            for (List<Item> item : items) {
-                for (Item each : item) {
-                    output.println(each);
-                }
+        List<Item> items = tracker.findAll();
+        if (items.size() > 0) {
+            for (Item item : items) {
+                    output.println(item);
             }
         } else {
             output.println("The database is empty");

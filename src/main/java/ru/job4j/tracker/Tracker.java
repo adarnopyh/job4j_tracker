@@ -31,9 +31,8 @@ public class Tracker {
         return index != -1 ? items.get(index) : null;
     }
 
-    public List<Item>[] findAll() {
-        List<Item> copyOf = new ArrayList<>(items);
-        return new List[]{copyOf};
+    public List<Item> findAll() {
+        return new ArrayList<>(items);
     }
 
     public List<Item> findByName(String key) {

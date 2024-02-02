@@ -21,12 +21,11 @@ public class FindByName implements UserAction {
     public boolean execute(Input input, Tracker tracker) {
         output.println("=== Search items by name ===");
         String name = input.askStr("Enter name: ");
-        List<Item>[] items = new ArrayList[]{(ArrayList) tracker.findByName(name)};
-        if (items.length > 0) {
-            for (List<Item> item : items) {
-                for (Item each : item) {
-                    output.println(each);
-                }
+//        public List<Item> findAll() {return new ArrayList<>(items);}
+        List<Item> items = tracker.findByName(name);
+        if (items.size() > 0) {
+            for (Item item : items) {
+                    output.println(item);
             }
         } else {
             output.println("Items with name: \"" + name + "\" are not found.");

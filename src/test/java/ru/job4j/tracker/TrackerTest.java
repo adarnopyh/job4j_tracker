@@ -24,7 +24,7 @@ public class TrackerTest {
         Item second = new Item("Second");
         tracker.add(first);
         tracker.add(second);
-        List result = tracker.findAll()[0];
+        List result = tracker.findAll();
         assertThat(result.get(0).equals(first.getName()));
     }
 
