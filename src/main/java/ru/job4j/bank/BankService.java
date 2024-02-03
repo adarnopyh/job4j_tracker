@@ -13,18 +13,15 @@ public class BankService {
     }
 
     public void deleteUser(String passport) {
-        users.remove(findByPassport(passport));
+        users.remove(new User(passport, ""));
     }
 
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
         if (user != null) {
-            for (User user1 : users.keySet()) {
-                List<Account> value = users.get(user1);
-                if (!value.contains(account)) {
-                    getAccounts(user).add(account);
-                    break;
-                }
+            List<Account> value = users.get(user);
+            if (!value.contains(account)) {
+                value.add(account);
             }
         }
     }
@@ -39,13 +36,12 @@ public class BankService {
     }
 
     public Account findByRequisite(String passport, String requisite) {
-        if (findByPassport(passport) != null) {
-            for (Map.Entry<User, List<Account>> entry : users.entrySet()) {
-                List<Account> accounts = entry.getValue();
-                for (Account account : accounts) {
-                    if (account.getRequisite().equals(requisite)) {
-                        return account;
-                    }
+        User user = findByPassport(passport);
+        if (user != null) {
+            List<Account> accounts = users.get(user);
+            for (Account account : accounts) {
+                if (account.getRequisite().equals(requisite)) {
+                    return account;
                 }
             }
         }
@@ -55,10 +51,15 @@ public class BankService {
     public boolean transferMoney(String sourcePassport, String sourceRequisite,
                                  String destinationPassport, String destinationRequisite,
                                  double amount) {
+        Account srcAccount = findByRequisite(sourcePassport, sourceRequisite);
+        Account destAccount = findByRequisite(destinationPassport, destinationRequisite);
         boolean result = false;
-        if (sourcePassport != null
-                && amount > 0) {
-           result = true;
+        if (srcAccount != null
+                && destAccount != null
+                && srcAccount.getBalance() >= amount) {
+            destAccount.setBalance(destAccount.getBalance() + amount);
+            srcAccount.setBalance(srcAccount.getBalance() - amount);
+            result = true;
         }
         return result;
     }
