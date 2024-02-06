@@ -35,12 +35,7 @@ public class AnalyzeByMap {
         int pupilCount = 0;
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                if (temp.containsKey(subject.name())) {
-                    int sumScore = temp.get(subject.name()) + subject.score();
-                    temp.put(subject.name(), sumScore);
-                } else {
-                    temp.put(subject.name(), subject.score());
-                }
+                temp.put(subject.name(), subject.score() + temp.getOrDefault(subject.name(), 0));
             }
             pupilCount++;
         }
@@ -59,8 +54,15 @@ public class AnalyzeByMap {
             }
             arrayOfLabels.add(new Label(pupil.name(), pupilTotalScore));
         }
-        arrayOfLabels.sort(Comparator.naturalOrder());
-        return arrayOfLabels.get(arrayOfLabels.size() - 1);
+        double max = 0.0d;
+        List<Label> sortedArrayOfLabels = new ArrayList<>();
+        for (Label label : arrayOfLabels) {
+            if (max < label.score()) {
+                max = label.score();
+                sortedArrayOfLabels.add(0, label);
+            }
+        }
+        return sortedArrayOfLabels.get(0);
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
