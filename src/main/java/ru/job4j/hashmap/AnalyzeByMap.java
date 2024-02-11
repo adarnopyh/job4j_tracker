@@ -54,15 +54,13 @@ public class AnalyzeByMap {
             }
             arrayOfLabels.add(new Label(pupil.name(), pupilTotalScore));
         }
-        double max = 0.0d;
-        List<Label> sortedArrayOfLabels = new ArrayList<>();
+        Label bestStudent = arrayOfLabels.get(0);
         for (Label label : arrayOfLabels) {
-            if (max < label.score()) {
-                max = label.score();
-                sortedArrayOfLabels.add(0, label);
+            if (bestStudent.score() < label.score()) {
+                bestStudent = label;
             }
         }
-        return sortedArrayOfLabels.get(0);
+        return bestStudent;
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
