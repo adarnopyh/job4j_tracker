@@ -3,6 +3,7 @@ package ru.job4j.tracker;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
 
@@ -101,30 +102,36 @@ public class TrackerTest {
     @Test
     public void whenAscByName() {
         List<Item> items = new ArrayList<>();
-        items.add(new Item("B"));
-        items.add(new Item("A"));
-        items.add(new Item("C"));
+        Item itemB = new Item("B");
+        Item itemA = new Item("A");
+        Item itemC = new Item("C");
+        items.add(itemB);
+        items.add(itemA);
+        items.add(itemC);
         items.sort(new ItemAscByName());
 
         List<Item> expected = new ArrayList<>();
-        expected.add(new Item("A"));
-        expected.add(new Item("B"));
-        expected.add(new Item("C"));
-        assertThat(items.equals(expected));
+        expected.add(itemA);
+        expected.add(itemB);
+        expected.add(itemC);
+        assertThat(items).isEqualTo(expected);
     }
 
     @Test
     public void whenDescByName() {
         List<Item> items = new ArrayList<>();
-        items.add(new Item("B"));
-        items.add(new Item("A"));
-        items.add(new Item("C"));
+        Item itemB = new Item("B");
+        Item itemA = new Item("A");
+        Item itemC = new Item("C");
+        items.add(itemB);
+        items.add(itemA);
+        items.add(itemC);
         items.sort(new ItemDescByName());
 
         List<Item> expected = new ArrayList<>();
-        expected.add(new Item("C"));
-        expected.add(new Item("B"));
-        expected.add(new Item("A"));
-        assertThat(items.equals(expected));
+        expected.add(itemC);
+        expected.add(itemB);
+        expected.add(itemA);
+        assertThat(items).isEqualTo(expected);
     }
 }
