@@ -21,18 +21,7 @@ public class LexSortTest {
                 "10. Task.",
                 "133. Task."
         };
-        for (String inputString : input ) {
-            System.out.println(inputString);
-        }
-        System.out.println();
-        for (String outputString : output ) {
-            System.out.println(outputString);
-        }
-        System.out.println();
         Arrays.sort(input, new LexSort());
-        for (String inputString : input ) {
-            System.out.println(inputString);
-        }
         assertThat(input).containsExactly(output);
     }
 }
