@@ -13,5 +13,4 @@ public class DepartmentsDescComparator implements Comparator<String> {
         }
         return result;
     }
-
 }

@@ -39,5 +39,4 @@ class DepartmentsDescComparatorTest {
         );
         assertThat(result).isGreaterThan(0);
     }
-
 }
