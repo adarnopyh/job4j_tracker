@@ -30,5 +30,4 @@ public class FunctionalInterfaces {
             consumer.accept(function.apply(string));
         }
     }
-
 }
