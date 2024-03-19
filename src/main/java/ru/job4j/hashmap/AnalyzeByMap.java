@@ -3,6 +3,7 @@ package ru.job4j.hashmap;
 import java.util.*;
 
 public class AnalyzeByMap {
+
     public static double averageScore(List<Pupil> pupils) {
         int totalSubjectCounter = 0;
         double totalScore = 0.0D;
@@ -31,11 +32,14 @@ public class AnalyzeByMap {
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
         List<Label> arrayOfLabels = new ArrayList<>();
+
+//        merge
+
         Map<String, Integer> temp = new LinkedHashMap<>();
         int pupilCount = 0;
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                temp.put(subject.name(), subject.score() + temp.getOrDefault(subject.name(), 0));
+                temp.merge(subject.name(), subject.score(), Integer::sum);
             }
             pupilCount++;
         }
@@ -68,12 +72,7 @@ public class AnalyzeByMap {
         Map<String, Integer> temp = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                if (temp.containsKey(subject.name())) {
-                    int sumScore = temp.get(subject.name()) + subject.score();
-                    temp.put(subject.name(), sumScore);
-                } else {
-                    temp.put(subject.name(), subject.score());
-                }
+                temp.merge(subject.name(), subject.score(), Integer::sum);
             }
         }
         for (Map.Entry<String, Integer> entry : temp.entrySet()) {
