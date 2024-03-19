@@ -32,9 +32,6 @@ public class AnalyzeByMap {
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
         List<Label> arrayOfLabels = new ArrayList<>();
-
-//        merge
-
         Map<String, Integer> temp = new LinkedHashMap<>();
         int pupilCount = 0;
         for (Pupil pupil : pupils) {
