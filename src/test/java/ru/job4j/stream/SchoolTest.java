@@ -37,7 +37,7 @@ public class SchoolTest {
                 new Student(80, "Surname8")
         );
         School school = new School();
-        Predicate<Student> predicate = student -> student.getScore() <= 70
+        Predicate<Student> predicate = student -> student.getScore() < 70
                 && student.getScore() >= 50;
         List<Student> result = school.collect(students, predicate);
         List<Student> expected = new ArrayList<>();
@@ -56,7 +56,7 @@ public class SchoolTest {
                 new Student(90, "Surname9")
         );
         School school = new School();
-        Predicate<Student> predicate = student -> student.getScore() <= 50;
+        Predicate<Student> predicate = student -> student.getScore() < 50;
         List<Student> result = school.collect(students, predicate);
         List<Student> expected = new ArrayList<>();
         expected.add(new Student(10, "Surname1"));
