@@ -8,7 +8,7 @@ public class FlatMapForCards {
         Value[] values = Value.values();
         Stream.of(suits)
                 .flatMap(suit -> Stream.of(values)
-                        .map(value -> suit + " " + value))
+                        .map(value -> new Card(suit, value)))
                 .forEach(System.out::println);
     }
 }
