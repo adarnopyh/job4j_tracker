@@ -13,5 +13,4 @@ public class StudentLevel {
                 .takeWhile(student -> student.getScore() >= bound)
                 .collect(Collectors.toList());
     }
-
 }
