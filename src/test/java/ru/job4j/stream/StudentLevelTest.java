@@ -67,4 +67,5 @@ class StudentLevelTest {
         List<Student> expected = List.of();
         assertThat(StudentLevel.levelOf(input, 20)).containsAll(expected);
     }
+
 }
